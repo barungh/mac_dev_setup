@@ -1,9 +1,3 @@
-# mac_dev_setup
-
-Here is a complete, copy-paste-ready Markdown guide formatted for a GitHub Gist or documentation file.
-
----
-
 ```markdown
 # Fresh macOS Setup Guide: Python, `uv`, and LazyVim
 
@@ -48,20 +42,36 @@ LazyVim requires a **Nerd Font** to render file tree icons, diagnostics, and sta
 
 ### 3.1 Install a Nerd Font
 ```bash
+# JetBrains Mono Nerd Font
 brew install --cask font-jetbrains-mono-nerd-font
+
+# OR Caskaydia Cove Nerd Font (Cascadia Code)
+brew install --cask font-caskaydia-cove-nerd-font
 ```
 
 ### 3.2 Choose a Modern Terminal (Optional but Recommended)
 While macOS Terminal works, modern GPU-accelerated terminal emulators offer a much smoother Neovim experience:
 
 ```bash
-# Options: Ghostty (recommended), WezTerm, or iTerm2
+# Option 1: Ghostty (recommended)
 brew install --cask ghostty
-# OR
+
+# Option 2: WezTerm
+brew install --cask wezterm
+
+# Option 3: iTerm2
 brew install --cask iterm2
 ```
 
-> **Important**: Open your terminal's settings (e.g., Ghostty/iTerm2 Preferences -> Profiles -> Text) and set the font to **JetBrainsMono Nerd Font**.
+> **Important**: Open your terminal's settings (e.g., Ghostty/WezTerm/iTerm2) and configure the font to your installed font (e.g., **JetBrainsMono Nerd Font** or **CaskaydiaCove Nerd Font**).
+> 
+> *For WezTerm, set it in `~/.wezterm.lua`:*
+> ```lua
+> local wezterm = require 'wezterm'
+> local config = wezterm.config_builder()
+> config.font = wezterm.font('CaskaydiaCove Nerd Font') -- or 'JetBrainsMono Nerd Font'
+> return config
+> ```
 
 ---
 
